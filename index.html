@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Harshini Suresha – Computational Biology, Bioinformatics, Systems Biology" />
+  <title>Harshini Suresha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a1a;
+      --muted: #5a5a5a;
+      --faint: #888;
+      --rule: #d8d8d8;
+      --accent: #1a5f8a;
+      --accent-light: #e8f2f9;
+      --bg: #ffffff;
+      --surface: #f6f6f4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 28px 100px;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 52px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+    nav a { color: var(--faint); }
+    nav a:hover { color: var(--accent); text-decoration: none; }
+
+    /* ── HEADER ── */
+    header { margin-bottom: 40px; }
+    header h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+      margin-bottom: 18px;
+    }
+    .contact-line {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      line-height: 2;
+    }
+    .contact-line a { color: var(--muted); }
+    .contact-line a:hover { color: var(--accent); }
+    .sep { color: var(--rule); }
+
+    /* ── DIVIDER ── */
+    .rule { border: none; border-top: 1px solid var(--rule); margin: 40px 0; }
+
+    /* ── NEWS ── */
+    .news {
+      background: var(--surface);
+      border-radius: 3px;
+      padding: 18px 22px;
+      margin-bottom: 40px;
+    }
+    .news-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .news-item {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 14px;
+    }
+    .news-item:last-child { margin-bottom: 0; }
+    .news-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--faint);
+      white-space: nowrap;
+      padding-top: 2px;
+      min-width: 52px;
+    }
+
+    /* ── BIO ── */
+    .bio { margin-bottom: 8px; }
+    .bio p + p { margin-top: 14px; }
+
+    /* ── SECTION HEADINGS ── */
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 48px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── ENTRY (experience / education) ── */
+    .entry { margin-bottom: 28px; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+    .entry-org {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .entry-role {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .entry-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--faint);
+      white-space: nowrap;
+    }
+    .entry ul {
+      margin: 8px 0 0 20px;
+      font-size: 0.95rem;
+    }
+    .entry ul li { margin-bottom: 5px; }
+
+    /* ── PROJECTS ── */
+    .project { margin-bottom: 30px; }
+    .project-name {
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+    .project-name .project-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--faint);
+      font-weight: 400;
+      margin-left: 10px;
+    }
+    .project-desc { font-size: 0.95rem; color: var(--text); margin-bottom: 5px; }
+    .project-tools {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--faint);
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub { margin-bottom: 18px; font-size: 0.96rem; line-height: 1.6; }
+    .pub-venue {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* ── SKILLS ── */
+    .skills { font-size: 0.93rem; }
+    .skill-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 8px 20px;
+      margin-bottom: 8px;
+      align-items: baseline;
+    }
+    .skill-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--faint);
+      padding-top: 2px;
+    }
+    .skill-val { color: var(--muted); line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 72px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--faint);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    @media (max-width: 520px) {
+      body { padding: 36px 18px 80px; }
+      header h1 { font-size: 1.7rem; }
+      .skill-row { grid-template-columns: 1fr; gap: 2px; }
+      .skill-label { padding-top: 0; }
+      nav { flex-wrap: wrap; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#skills">Skills</a>
+  </nav>
+
+  <header id="about">
+    <h1>Harshini Suresha</h1>
+    <p class="tagline">Computational Biology &nbsp;·&nbsp; Bioinformatics &nbsp;·&nbsp; Systems Biology</p>
+    <div class="contact-line">
+      <span>Bangalore, India</span>
+      <span class="sep">·</span>
+      <a href="mailto:harshinisuresha7@gmail.com">harshinisuresha7 [at] gmail.com</a>
+      <span class="sep">·</span>
+      <a href="https://github.com/Harshini-Suresha" target="_blank">GitHub</a>
+      <span class="sep">·</span>
+      <a href="https://linkedin.com/in/harshini-suresha" target="_blank">LinkedIn</a>
+      <span class="sep">·</span>
+      <a href="https://HarshiniPortfolio.com" target="_blank">Portfolio</a>
+      <span class="sep">·</span>
+      <a href="#">CV</a>
+    </div>
+  </header>
+
+  <hr class="rule">
+
+  <div class="news">
+    <div class="news-label">News</div>
+    <div class="news-item">
+      <span class="news-date">2026.01</span>
+      <span>Paper accepted at <strong>AAAI Workshop on SPARTA–2026</strong> (Singapore): PathSymetic – Neuro-Symbolic Causal Hypothesis Generation for Mechanistic Pathway Discovery.</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.12</span>
+      <span>Presented at <strong>NeurIPS Workshop on SPIGM &amp; Reliable ML</strong> (San Diego): A Multi-Method Interpretability Framework for Deep Neural Networks.</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.06</span>
+      <span>Joined <a href="https://iisc.ac.in/" target="_blank">Indian Institute of Science (IISc)</a> as Project Trainee, working on single-cell RNA-seq and multi-omics analysis.</span>
+    </div>
+  </div>
+
+  <div class="bio">
+    <p>I am a final-year B.Tech student in Biotechnology with a minor in Computer Science at <a href="https://pes.edu/" target="_blank">PES University, Bangalore</a>, currently a Project Trainee at the <a href="https://iisc.ac.in/" target="_blank">Indian Institute of Science (IISc)</a>.</p>
+    <p>My work sits at the intersection of machine learning, genomics, and systems biology. I am particularly drawn to single-cell transcriptomics, neuro-symbolic reasoning for pathway discovery, and structure-based drug design. I aspire to pursue an M.S. in Computational Biology and contribute to predictive modeling and biomolecular simulation.</p>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <h2 id="experience">Experience</h2>
+
+  <div class="entry">
+    <div class="entry-header">
+      <div>
+        <span class="entry-org">Indian Institute of Science (IISc)</span>
+        &nbsp;—&nbsp;
+        <span class="entry-role">Project Trainee</span>
+      </div>
+      <span class="entry-date">Jun 2025 – Present · Bangalore</span>
+    </div>
+    <ul>
+      <li>RNA-seq &amp; single-cell analysis using fastp, STAR, Seurat, Scanpy, FastQC, and cell-type annotation pipelines.</li>
+      <li>Differential expression &amp; statistical modeling with DESeq2, edgeR, limma-voom, and MAST; pseudobulk aggregation.</li>
+      <li>Immune repertoire profiling via MiXCR: TCR/BCR reconstruction, clonotype quantification, diversity scoring.</li>
+      <li>Gene co-expression network construction (WGCNA); mechanistic pathway inference using the Compass framework.</li>
+      <li>Reproducible workflows: Linux/Bash, HPC/SLURM, Snakemake, Nextflow, Docker, Singularity.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <div>
+        <span class="entry-org">Plant Tissue Culture Lab, PES University</span>
+        &nbsp;—&nbsp;
+        <span class="entry-role">Research Intern</span>
+      </div>
+      <span class="entry-date">Feb 2024 – Jun 2025 · Bangalore</span>
+    </div>
+    <ul>
+      <li>Wet lab: plant inoculation (Holy Basil, Jasmine, <em>Bacopa monnieri</em>) and secondary hardening.</li>
+      <li>Dry lab: molecular docking and modeling using Discovery Studio Biovia and AutoDock.</li>
+    </ul>
+  </div>
+
+  <!-- EDUCATION (inline with experience) -->
+  <div class="entry">
+    <div class="entry-header">
+      <div>
+        <span class="entry-org">PES University, Bangalore</span>
+        &nbsp;—&nbsp;
+        <span class="entry-role">B.Tech Biotechnology, Minor in Computer Science</span>
+      </div>
+      <span class="entry-date">2022 – 2026</span>
+    </div>
+    <ul>
+      <li>Coursework: Bioinformatics, Genomics &amp; Proteomics, Structural Biology, Computer-Aided Drug Design, Data Structures &amp; Algorithms, Health Informatics, DBMS.</li>
+      <li>Scholastic Achievement: DAC (Distinction Award Certificate)</li>
+    </ul>
+  </div>
+
+  <!-- PROJECTS -->
+  <h2 id="projects">Research Projects</h2>
+
+  <div class="project">
+    <div class="project-name">
+      PathSymetic: Neuro-Symbolic Causal Hypothesis Generation for Mechanistic Pathway Discovery
+      <span class="project-date">Jun 2025 – Present</span>
+    </div>
+    <p class="project-desc">A neuro-symbolic framework integrating knowledge graphs, pathway ontologies, and deep learning embeddings to generate interpretable mechanistic pathway hypotheses. Hybrid inference pipeline using GNNs, rule-based symbolic engines, and biological knowledge bases (KEGG, Reactome, BioGRID).</p>
+  </div>
+
+  <div class="project">
+    <div class="project-name">
+      Quorum Quenching Properties of <em>Premna serratifolia</em> on <em>Pseudomonas aeruginosa</em>
+      <span class="project-date">Aug 2023 – Dec 2025</span>
+    </div>
+    <p class="project-desc">Integrated wet-lab phytochemical screening with in-silico molecular docking, virtual screening, and molecular dynamics simulations. Analyzed 38 phytochemicals across 38 quorum sensing target proteins; conducted SEM imaging to visualize biofilm architecture changes.</p>
+    <div class="project-tools">AutoDock Vina · AutoDock 4 · Gromacs · AMBER · MMPBSA · PyMOL · SwissADME · Discovery Studio Biovia</div>
+  </div>
+
+  <div class="project">
+    <div class="project-name">
+      Deep Learning-Based Identification of Red Palm Mite Infestation
+      <span class="project-date">Nov 2024 – Feb 2025</span>
+    </div>
+    <p class="project-desc">Trained a plant disease detection model on 15,000 images across 11 species, achieving 99% accuracy using CNNs, ResNet50, Vision Transformers, and EfficientNet. Deployed a real-time Streamlit web application for pest detection.</p>
+    <div class="project-tools">Python · TensorFlow · Keras · OpenCV · Scikit-Learn</div>
+  </div>
+
+  <div class="project">
+    <div class="project-name">
+      Predicting Bioactivity of SARS-CoV-2 3CL Proteinase Inhibitors
+      <span class="project-date">Dec 2024 – Feb 2025</span>
+    </div>
+    <p class="project-desc">Curated a bioactivity dataset from ChEMBL for 3CLpro inhibitors; built a Random Forest classifier on RDKit Morgan fingerprints. Evaluated with AUC-ROC and F1-score metrics.</p>
+    <div class="project-tools">RDKit · Scikit-learn · XGBoost · LightGBM · ChEMBL · Streamlit</div>
+  </div>
+
+  <div class="project">
+    <div class="project-name">
+      RNA-Seq Data Analysis and Transcriptomics Workflow
+      <span class="project-date">Oct 2024 – Jan 2025</span>
+    </div>
+    <p class="project-desc">Processed and aligned paired-end RNA-Seq reads with Cutadapt and STAR. QC aggregation via MultiQC, gene expression quantification with FeatureCounts, and differential expression analysis preparation.</p>
+    <div class="project-tools">Galaxy · STAR · MultiQC · FeatureCounts · DESeq2 · EdgeR · IGV</div>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <h2 id="publications">Conferences &amp; Publications</h2>
+
+  <div class="pub">
+    PathSymetic: Neuro-Symbolic Causal Hypothesis Generation for Mechanistic Pathway Discovery in Genomic Systems.<br>
+    <span class="pub-venue">AAAI Workshop on SPARTA–2026, Singapore.</span>
+  </div>
+
+  <div class="pub">
+    A Multi-Method Interpretability Framework for Probing Cognitive Processing in Deep Neural Networks Across Vision and Biomedical Domains.<br>
+    <span class="pub-venue">NeurIPS Workshop on SPIGM &amp; Reliable ML from Unreliable Data–2025, San Diego.</span>
+  </div>
+
+  <div class="pub">
+    Machine Learning-Augmented Simulation of Bioethanol Production from Vegetable Waste, Lignocellulosic Biomass, and Marine Algae Using MATLAB.<br>
+    <span class="pub-venue">ACMS–2026, Kolkata.</span>
+  </div>
+
+  <div class="pub">
+    Evaluating a Comprehensive Set of Machine Learning Algorithms for Classifying Red Palm Mite-Affected Plants and Detecting Infestations Using Leaf Images.<br>
+    <span class="pub-venue">ICCET–2025, Chennai.</span>
+  </div>
+
+  <div class="pub">
+    Innovative Bioethanol Production from Tropical Fruit Residues Using Biomaterial Catalysts and Yeast Bioagents.<br>
+    <span class="pub-venue">ICRAES–2024, MSRIT Bangalore.</span>
+  </div>
+
+  <!-- SKILLS -->
+  <h2 id="skills">Technical Skills</h2>
+
+  <div class="skills">
+    <div class="skill-row">
+      <span class="skill-label">Languages</span>
+      <span class="skill-val">Python, R, C++, Java, SQL, JavaScript, TypeScript, Bash, Perl</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Web / Frameworks</span>
+      <span class="skill-val">React.js, Next.js, Tailwind CSS, Node.js, Flask, Streamlit</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">ML / DL</span>
+      <span class="skill-val">TensorFlow, Keras, PyTorch, PyTorch Geometric, Scikit-learn, XGBoost, LightGBM, OpenCV</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Bioinformatics</span>
+      <span class="skill-val">STAR, DESeq2, EdgeR, Seurat, Scanpy, MiXCR, WGCNA, Monocle3, clusterProfiler, MAST, MultiQC, FeatureCounts, SAMtools, Trimmomatic, FastQC, fastp, KEGG, Bowtie2, AutoDock, PyMOL, Chimera, Rosetta, Compass</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Infrastructure</span>
+      <span class="skill-val">HPC/SLURM, Snakemake, Nextflow, Docker, Singularity, Git, Linux, Conda, Jupyter, LaTeX, MATLAB</span>
+    </div>
+  </div>
+
+  <footer>
+    <span>Harshini Suresha · Bangalore, India</span>
+    <span><a href="mailto:harshinisuresha7@gmail.com">harshinisuresha7@gmail.com</a></span>
+  </footer>
+
+</body>
+</html>
